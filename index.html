@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patricia Leonard — Kunst, die Glauben sichtbar macht</title>
+  <meta name="description" content="Patricia Leonard ist bildende Künstlerin in Villach. Ihre Gemälde verbinden Malerei, Blattgold und eine stille, christlich geprägte Botschaft — kuratiert in einer digitalen Galerie." />
+  <meta name="keywords" content="Patricia Leonard, christliche Kunst, Gemälde, Malerei, Kunstgalerie, Auftragsarbeiten, Villach" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F1E9DC" />
+  <link rel="canonical" href="/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Patricia Leonard — Art" />
+  <meta property="og:title" content="Patricia Leonard — Kunst, die Glauben sichtbar macht" />
+  <meta property="og:description" content="Eine kuratierte Sammlung origineller Gemälde, in denen Kunst, Geschichte und christlicher Glaube zusammenfinden." />
+  <meta property="og:image" content="Images/IMG_1125.jpeg" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Patricia Leonard — Kunst, die Glauben sichtbar macht" />
+  <meta name="twitter:description" content="Eine kuratierte Sammlung origineller Gemälde, in denen Kunst, Geschichte und christlicher Glaube zusammenfinden." />
+  <meta name="twitter:image" content="Images/IMG_1125.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">Patricia Leonard</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#gallery" class="nav-link">Portfolio</a></li>
+      <li><a href="#about" class="nav-link">Über mich</a></li>
+      <li><a href="#vision" class="nav-link">Vision</a></li>
+      <li><a href="#contact" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <p class="label reveal">Fine Art &amp; Malerei</p>
+      <h1 class="hero-title reveal">
+        Kunst, die<br /><em>Glauben sichtbar macht.</em>
+      </h1>
+      <p class="hero-sub reveal">
+        Eine kuratierte Sammlung origineller Gemälde — entstanden aus der
+        stillen Verbindung von künstlerischem Ausdruck, persönlicher
+        Geschichte und christlichem Glauben.
+      </p>
+      <a href="#gallery" class="btn-primary reveal">Kunstwerke entdecken</a>
+    </div>
+    <div class="hero-image reveal-right">
+      <div class="hero-img-frame">
+        <img src="Images/IMG_1125.jpeg" alt="Gemälde eines Löwenprofils mit wehender Mähne und Blattgold-Akzenten, „Löwe von Juda“" fetchpriority="high" />
+      </div>
+      <p class="hero-img-caption">Löwe von Juda, 2026</p>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURED WORKS ─── -->
+  <section class="featured" id="featured">
+    <div class="section-header reveal">
+      <p class="label">Ausgewählte Werke</p>
+      <h2 class="section-title">Neuste <em>Werke</em></h2>
+    </div>
+
+    <div class="featured-grid">
+      <!-- wird aus ARTWORKS (artworks-data.js) gerendert, siehe script.js → renderFeatured() -->
+    </div>
+
+    <div class="featured-quote reveal">
+      <p>&ldquo;Jede Linie und jede Farbe ist ein Akt des Vertrauens.&rdquo;</p>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ─── -->
+  <section class="gallery" id="gallery">
+    <div class="section-header reveal">
+      <p class="label">Vollständige Sammlung</p>
+      <h2 class="section-title">Das <em>Portfolio</em></h2>
+      <p class="gallery-desc">Gemälde aus den Bereichen Glaube &amp; Symbolik, Tiere &amp; Natur sowie Porträt &amp; stille Momente.</p>
+    </div>
+
+    <div class="gallery-masonry">
+      <!-- wird aus ARTWORKS (artworks-data.js) gerendert, siehe script.js → renderGallery() -->
+    </div>
+
+    <div class="gallery-cta reveal">
+      <a href="#contact" class="btn-outline">Ein Werk anfragen</a>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text reveal">
+        <p class="label">Die Künstlerin</p>
+        <h2 class="section-title">Über <em>mich</em></h2>
+        <p class="about-body">
+          „Ich heiße Patricia Leonard und lebe in Villach. Mein Glaube ist das Fundament meines Lebens und die Quelle meiner Kunst. In ihm finde ich Kraft, Orientierung und Sinn. Meine Werke entstehen aus einer tiefen Verbindung zu Gott und tragen das Wort Gottes in sich – als Zeichen der Hoffnung, der Liebe und der Wahrheit. Kunst ist für mich eine Sprache des Herzens, durch die ich ausdrücken darf, was Worte allein oft nicht vermögen.”
+        </p>
+        <p class="about-body">
+          „Meine Mission ist es, den Glauben durch meine Kunst weiterzugeben und Menschen daran zu erinnern, dass sie niemals allein sind. Ich glaube daran, dass Gott durch kreative Ausdrucksformen wirkt und Herzen berührt. Mit großer Begeisterung erschaffe ich Werke, die Licht in Dunkelheit bringen, Mut schenken und den Blick auf das Ewige lenken. Jede Linie und jede Farbe ist ein Akt des Vertrauens – und ein Schritt, das Wort Gottes sichtbar in die Welt zu tragen.”
+        </p>
+        <div class="about-divider"></div>
+        <p class="about-signature">Patricia Leonard</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── VISION / BIBELVERSE ─── -->
+  <section class="vision" id="vision">
+    <div class="section-header reveal">
+      <p class="label">Glaube &amp; Kunst</p>
+      <h2 class="section-title">Meine <em>Vision</em></h2>
+      <p class="vision-intro">
+        Kunst und Glaube sind für mich untrennbar miteinander verbunden. Jedes
+        Werk beginnt mit einem stillen Gebet und endet als sichtbares Zeugnis
+        dessen, was Worte allein oft nicht auszudrücken vermögen.
+      </p>
+    </div>
+
+    <div class="tc-stage" id="tcStage">
+      <!-- Karten werden per script.js eingefügt -->
+      <div class="tc-nav">
+        <button class="tc-btn" id="tcPrev" aria-label="Vorherige Bibelstelle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="tc-btn" id="tcNext" aria-label="Nächste Bibelstelle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section class="contact" id="contact">
+    <div class="contact-inner reveal">
+      <p class="label">Kontakt</p>
+      <h2 class="section-title">Lassen Sie uns <em>sprechen</em></h2>
+      <p class="contact-sub">
+        Für Kaufanfragen, Auftragsarbeiten, Ausstellungsanfragen, Lizenzierungen oder<br />
+        einfach um Hallo zu sagen — ich freue mich auf Ihre Nachricht.
+      </p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required />
+            <span class="form-error" id="cf-name-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">E-Mail</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required />
+            <span class="form-error" id="cf-email-error"></span>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-subject">Anliegen</label>
+          <select id="cf-subject" name="subject">
+            <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+            <option value="Kunstwerk anfragen">Kunstwerk anfragen</option>
+            <option value="Auftragsarbeit">Auftragsarbeit</option>
+            <option value="Ausstellung">Ausstellung</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Nachricht</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+          <span class="form-error" id="cf-message-error"></span>
+        </div>
+        <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit" class="btn-primary contact-submit">Nachricht senden</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-divider"></div>
+
+      <p class="contact-alt-label">Oder direkt erreichen</p>
+
+      <div class="contact-methods">
+        <a href="mailto:patricialeonard.design@gmail.com" class="contact-method">
+          <span class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </span>
+          <span class="contact-method-label">E-Mail</span>
+        </a>
+        <a href="https://wa.me/436504629476" target="_blank" rel="noopener" class="contact-method">
+          <span class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.2 14.3c-.22.62-1.28 1.18-1.77 1.24-.45.06-1.02.08-1.65-.1a15 15 0 0 1-1.5-.56c-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.44-1.08-2.74s.68-1.94.92-2.2c.24-.26.53-.33.71-.33h.5c.16 0 .38-.03.58.45.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.14.29-.27.44-.13.16-.28.34-.4.46-.13.13-.27.27-.12.53.16.26.7 1.17 1.51 1.9 1.04.94 1.92 1.24 2.18 1.38.26.13.42.11.57-.07.16-.18.66-.78.84-1.05.18-.26.35-.22.6-.13.24.09 1.55.74 1.82.87.26.13.44.2.5.31.06.12.06.68-.16 1.3Z"/></svg>
+          </span>
+          <span class="contact-method-label">WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/patricialeonard_art/" target="_blank" rel="noopener" class="contact-method">
+          <span class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="contact-method-label">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61592043727835" target="_blank" rel="noopener" class="contact-method">
+          <span class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.8h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46h1.6V4.14C15.94 4.1 15.1 4 14.1 4c-2.1 0-3.5 1.28-3.5 3.63v2.57H8v3h2.6V21h2.9Z"/></svg>
+          </span>
+          <span class="contact-method-label">Facebook</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo">Patricia Leonard</p>
+      <p class="footer-copy">&copy; 2026 Patricia Leonard</p>
+      <div class="footer-links">
+        <a href="#hero">Nach oben</a>
+        <a href="#gallery">Portfolio</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── LIGHTBOX ─── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Werkansicht">
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg" />
+      <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">&times;</button>
+    </div>
+  </div>
+
+  <script src="artworks-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
