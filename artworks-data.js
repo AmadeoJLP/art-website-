@@ -509,28 +509,6 @@ const ARTWORKS = [
     availability: "Auf Anfrage",
     featured: false,
   },
-  {
-    id: "hahn",
-    title: "Hahn",
-    image: "Images/IMG_4225.jpg",
-    alt: "Gemälde eines Hahns mit rotem Kamm und violett-grauem, zerzaustem Gefieder vor grauem Hintergrund",
-    year: "2026",
-    category: "tiere",
-    categoryLabel: "Tiere & Natur",
-    technique: PLACEHOLDER.technique,
-    dimensions: PLACEHOLDER.dimensions,
-    background: PLACEHOLDER.background,
-    symbolism:
-      "Der wache, direkte Blick des Hahns und sein aufgestellter Kamm stehen für Wachsamkeit und den Anbruch eines neuen Tages.",
-    christianMeaning:
-      "Der Hahn erinnert an die Verleugnung des Petrus und den Ruf zur Umkehr — und zugleich, mit dem Krähen am Morgen, an einen neuen Anfang.",
-    bibleVerse:
-      "„Und alsbald krähte der Hahn. Da gedachte Petrus an das Wort Jesu.“ — Matthäus 26,74-75",
-    interpretation: PLACEHOLDER.interpretation,
-    availability: "Auf Anfrage",
-    featured: false,
-  },
-
   // ── PORTRÄT & STILLE MOMENTE ─────────────────────────────────────
   {
     id: "ballerina",
