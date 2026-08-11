@@ -235,12 +235,68 @@
     </div>
   </footer>
 
-  <!-- ─── LIGHTBOX ─── -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Werkansicht">
-    <div class="lightbox-overlay" id="lightboxOverlay"></div>
-    <div class="lightbox-content">
-      <img src="" alt="" id="lightboxImg" />
-      <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">&times;</button>
+  <!-- ─── ARTWORK DETAIL ─── -->
+  <div class="artwork-detail" id="artworkDetail" role="dialog" aria-modal="true" aria-label="Werkdetails">
+    <div class="detail-overlay" id="detailOverlay"></div>
+    <div class="detail-panel" id="detailPanel">
+      <div class="detail-controls">
+        <button class="detail-close" id="detailClose" aria-label="Schließen">&times;</button>
+      </div>
+
+      <div class="detail-scroll">
+        <div class="detail-hero" id="detailHero">
+          <img src="" alt="" id="detailImg" />
+          <div class="detail-hero-fade"></div>
+          <button class="detail-nav detail-prev" id="detailPrev" aria-label="Vorheriges Werk">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="detail-nav detail-next" id="detailNext" aria-label="Nächstes Werk">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="detail-scroll-hint">
+            <span>Die Geschichte dieses Werks</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+
+        <div class="detail-body">
+          <div class="detail-intro reveal">
+            <p class="detail-category" id="detailCategory"></p>
+            <h2 class="detail-title" id="detailTitle"></h2>
+            <p class="detail-meta" id="detailMeta"></p>
+          </div>
+
+          <div class="detail-verse reveal" id="detailVerseBlock">
+            <span class="detail-verse-mark" aria-hidden="true">&ldquo;</span>
+            <p class="detail-verse-text" id="detailVerseText"></p>
+            <p class="detail-verse-ref" id="detailVerseRef"></p>
+          </div>
+
+          <div class="detail-section reveal">
+            <p class="detail-eyebrow">Die Geschichte</p>
+            <p class="detail-text" id="detailBackground"></p>
+          </div>
+
+          <div class="detail-section reveal">
+            <p class="detail-eyebrow">Symbolik</p>
+            <p class="detail-text" id="detailSymbolism"></p>
+          </div>
+
+          <div class="detail-gospel reveal">
+            <p class="detail-gospel-label">Die Botschaft des Evangeliums</p>
+            <p class="detail-gospel-text" id="detailGospel"></p>
+          </div>
+
+          <div class="detail-section detail-reflection reveal">
+            <p class="detail-eyebrow">Zum Nachdenken</p>
+            <p class="detail-text" id="detailInterpretation"></p>
+          </div>
+
+          <div class="detail-cta reveal">
+            <a href="#contact" class="btn-primary" id="detailContactLink">Dieses Werk anfragen</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

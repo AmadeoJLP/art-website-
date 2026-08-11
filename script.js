@@ -153,54 +153,135 @@ function observeReveals(nodeList) {
 }
 
 /* ─────────────────────────────────────────────
-   LIGHTBOX — enlarged image view
+   ARTWORK DETAIL — scrollable full story view
 ───────────────────────────────────────────── */
-const lightbox = document.getElementById('lightbox');
-const lightboxOverlay = document.getElementById('lightboxOverlay');
-const lightboxClose = document.getElementById('lightboxClose');
-const lightboxImg = document.getElementById('lightboxImg');
+const artworkDetail = document.getElementById('artworkDetail');
+const detailOverlay = document.getElementById('detailOverlay');
+const detailClose = document.getElementById('detailClose');
+const detailPrev = document.getElementById('detailPrev');
+const detailNext = document.getElementById('detailNext');
+const detailScroll = artworkDetail ? artworkDetail.querySelector('.detail-scroll') : null;
+const detailHero = document.getElementById('detailHero');
+const detailImg = document.getElementById('detailImg');
+const detailCategory = document.getElementById('detailCategory');
+const detailTitle = document.getElementById('detailTitle');
+const detailMeta = document.getElementById('detailMeta');
+const detailVerseText = document.getElementById('detailVerseText');
+const detailVerseRef = document.getElementById('detailVerseRef');
+const detailVerseBlock = document.getElementById('detailVerseBlock');
+const detailBackground = document.getElementById('detailBackground');
+const detailSymbolism = document.getElementById('detailSymbolism');
+const detailGospel = document.getElementById('detailGospel');
+const detailInterpretation = document.getElementById('detailInterpretation');
+const detailContactLink = document.getElementById('detailContactLink');
+
 let lastFocusedTrigger = null;
+let currentArtworkId = null;
 
-function openLightbox(id, trigger) {
-  const art = ARTWORKS.find((a) => a.id === id);
-  if (!art || !lightbox) return;
-
-  lastFocusedTrigger = trigger || null;
-
-  lightboxImg.src = art.image;
-  lightboxImg.alt = art.alt;
-
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  lightboxClose.focus();
+function splitVerse(bibleVerse) {
+  const parts = (bibleVerse || '').split(' — ');
+  if (parts.length < 2) return { text: bibleVerse || '', ref: '' };
+  return { text: parts[0], ref: parts.slice(1).join(' — ') };
 }
 
-function closeLightbox() {
-  if (!lightbox) return;
-  lightbox.classList.remove('open');
+function openArtworkDetail(id, trigger) {
+  const art = ARTWORKS.find((a) => a.id === id);
+  if (!art || !artworkDetail) return;
+
+  lastFocusedTrigger = trigger || null;
+  currentArtworkId = id;
+
+  detailImg.src = art.image;
+  detailImg.alt = art.alt;
+  detailCategory.textContent = art.categoryLabel;
+  detailTitle.textContent = art.title;
+  detailMeta.textContent = [art.technique, art.year].filter(Boolean).join(' · ');
+  detailBackground.textContent = art.background;
+  detailSymbolism.textContent = art.symbolism;
+  detailGospel.textContent = art.christianMeaning;
+  detailInterpretation.textContent = art.interpretation;
+
+  const verse = splitVerse(art.bibleVerse);
+  detailVerseText.textContent = verse.text;
+  detailVerseRef.textContent = verse.ref;
+  if (detailVerseBlock) detailVerseBlock.style.display = verse.text ? '' : 'none';
+
+  if (detailContactLink) {
+    detailContactLink.addEventListener(
+      'click',
+      () => {
+        const subject = document.getElementById('cf-subject');
+        const message = document.getElementById('cf-message');
+        if (subject) subject.value = 'Kunstwerk anfragen';
+        if (message && !message.value) {
+          message.value = `Ich interessiere mich für das Werk „${art.title}“.`;
+        }
+      },
+      { once: true }
+    );
+  }
+
+  artworkDetail.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (detailScroll) detailScroll.scrollTop = 0;
+
+  // Reveal-Animationen im Panel bei jedem Öffnen neu abspielen
+  const revealEls = artworkDetail.querySelectorAll('.reveal');
+  revealEls.forEach((el) => el.classList.remove('visible'));
+  requestAnimationFrame(() => observeReveals(revealEls));
+
+  if (detailClose) detailClose.focus();
+}
+
+function closeArtworkDetail() {
+  if (!artworkDetail) return;
+  artworkDetail.classList.remove('open');
   document.body.style.overflow = '';
   if (lastFocusedTrigger) lastFocusedTrigger.focus();
 }
 
+function navigateArtworkDetail(step) {
+  if (!currentArtworkId) return;
+  const idx = ARTWORKS.findIndex((a) => a.id === currentArtworkId);
+  if (idx === -1) return;
+  const nextIdx = (idx + step + ARTWORKS.length) % ARTWORKS.length;
+  openArtworkDetail(ARTWORKS[nextIdx].id, lastFocusedTrigger);
+}
+
 function wireArtworkTriggers(scope) {
   scope.querySelectorAll('[data-artwork-id]').forEach((el) => {
-    el.addEventListener('click', () => openLightbox(el.dataset.artworkId, el));
+    el.addEventListener('click', () => openArtworkDetail(el.dataset.artworkId, el));
     el.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openLightbox(el.dataset.artworkId, el);
+        openArtworkDetail(el.dataset.artworkId, el);
       }
     });
   });
 }
 
-if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
-if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+if (detailOverlay) detailOverlay.addEventListener('click', closeArtworkDetail);
+if (detailClose) detailClose.addEventListener('click', closeArtworkDetail);
+if (detailPrev) detailPrev.addEventListener('click', () => navigateArtworkDetail(-1));
+if (detailNext) detailNext.addEventListener('click', () => navigateArtworkDetail(1));
+
+if (detailScroll && detailHero && !prefersReducedMotion) {
+  detailScroll.addEventListener(
+    'scroll',
+    () => {
+      const y = detailScroll.scrollTop;
+      const img = detailHero.querySelector('img');
+      if (img) img.style.transform = `scale(${1 + Math.min(y, 400) * 0.0003}) translateY(${y * 0.15}px)`;
+    },
+    { passive: true }
+  );
+}
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) {
-    closeLightbox();
-  }
+  if (!artworkDetail || !artworkDetail.classList.contains('open')) return;
+  if (e.key === 'Escape') closeArtworkDetail();
+  if (e.key === 'ArrowRight') navigateArtworkDetail(1);
+  if (e.key === 'ArrowLeft') navigateArtworkDetail(-1);
 });
 
 /* ─────────────────────────────────────────────
