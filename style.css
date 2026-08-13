@@ -353,125 +353,6 @@ a {
 }
 
 /* ─────────────────────────────────────────────
-   FEATURED WORKS
-───────────────────────────────────────────── */
-.featured {
-  padding: var(--section-py) clamp(1.5rem, 6vw, 5rem);
-  max-width: var(--max-w);
-  margin: 0 auto;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--gap);
-  margin-bottom: 5rem;
-}
-
-.featured-side {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-}
-
-/* Artwork card shared styles */
-.artwork-wrap {
-  position: relative;
-  overflow: hidden;
-  background: var(--cream-dark);
-  cursor: pointer;
-}
-
-.artwork-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s var(--ease-out);
-}
-
-.artwork-wrap:hover .artwork-img {
-  transform: scale(1.05);
-}
-
-.artwork-hover {
-  position: absolute;
-  inset: 0;
-  background: rgba(26, 22, 18, 0.38);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s var(--ease-out);
-}
-
-.artwork-wrap:hover .artwork-hover {
-  opacity: 1;
-}
-
-.artwork-hover-label {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--white);
-  border: 1px solid rgba(253, 250, 245, 0.6);
-  padding: 0.6rem 1.6rem;
-  transition: border-color 0.3s, letter-spacing 0.3s var(--ease-out);
-}
-
-.artwork-wrap:hover .artwork-hover-label {
-  border-color: var(--white);
-  letter-spacing: 0.4em;
-}
-
-.featured-main .artwork-wrap {
-  aspect-ratio: 3/4;
-}
-
-.featured-item .artwork-wrap {
-  aspect-ratio: 4/3;
-}
-
-.artwork-meta {
-  padding: 1rem 0 0;
-}
-
-.artwork-meta h3 {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--ink);
-  margin-bottom: 0.2rem;
-}
-
-.artwork-meta p {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: var(--ink-light);
-}
-
-.featured-quote {
-  text-align: center;
-  padding: 3rem 0;
-  border-top: 1px solid rgba(26, 22, 18, 0.09);
-}
-
-.featured-quote p {
-  font-family: var(--font-serif);
-  font-size: clamp(1.35rem, 3vw, 2rem);
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink-mid);
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.55;
-}
-
-/* ─────────────────────────────────────────────
    GALLERY — CSS MASONRY (columns)
 ───────────────────────────────────────────── */
 .gallery {
@@ -1363,14 +1244,6 @@ a {
 
   .hero-scroll-indicator { display: none; }
 
-  .featured-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .featured-main .artwork-wrap {
-    aspect-ratio: 4/3;
-  }
-
   .gallery-masonry {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.6rem;
@@ -1468,6 +1341,79 @@ a {
   .detail-verse-mark {
     font-size: 2.75rem;
   }
+
+  .hero {
+    padding-top: 6rem;
+    padding-bottom: 3.5rem;
+    gap: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 11vw, 3.5rem);
+  }
+
+  .vision {
+    padding-top: clamp(3.5rem, 10vw, 6rem);
+  }
+
+  .tc-stage {
+    height: 430px;
+  }
+
+  .testimonial-card {
+    padding: 1.5rem 1.35rem;
+    clip-path: polygon(32px 0%, calc(100% - 32px) 0%, 100% 32px, 100% 100%, calc(100% - 32px) 100%, 32px 100%, 0 100%, 0 0);
+  }
+
+  .tc-cut-line {
+    top: 30px;
+    width: 45.25px;
+  }
+
+  .tc-deco-quote {
+    font-size: 1.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .tc-quote {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .tc-author {
+    margin-top: 1rem;
+    padding-top: 0.7rem;
+  }
+
+  .tc-nav {
+    bottom: 0.5rem;
+  }
+
+  .tc-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .tc-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-links .nav-link {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  }
+
+  .nav-links.open .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links.open .nav-link:nth-child(1) { transition-delay: 0.08s; }
+  .nav-links.open .nav-link:nth-child(2) { transition-delay: 0.14s; }
+  .nav-links.open .nav-link:nth-child(3) { transition-delay: 0.2s; }
+  .nav-links.open .nav-link:nth-child(4) { transition-delay: 0.26s; }
 }
 
 /* ─────────────────────────────────────────────

@@ -12,51 +12,6 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-/* ─────────────────────────────────────────────
-   FEATURED WORKS — rendered from ARTWORKS
-───────────────────────────────────────────── */
-function renderFeatured() {
-  const grid = document.querySelector('.featured-grid');
-  if (!grid) return;
-
-  const featured = ARTWORKS.filter((a) => a.featured);
-  const [main, ...rest] = featured;
-  if (!main) return;
-
-  const mainEl = document.createElement('div');
-  mainEl.className = 'featured-main reveal';
-  mainEl.innerHTML = `
-    <div class="artwork-wrap" data-artwork-id="${main.id}" role="button" tabindex="0" aria-label="${escapeHtml(main.title)} ansehen">
-      <img src="${main.image}" alt="${escapeHtml(main.alt)}" class="artwork-img" loading="lazy" decoding="async" />
-      <div class="artwork-hover"><span class="artwork-hover-label">Ansehen</span></div>
-    </div>
-    <div class="artwork-meta">
-      <h3>${escapeHtml(main.title)}</h3>
-      <p>${escapeHtml(main.technique)} &middot; ${escapeHtml(main.year)}</p>
-    </div>
-  `;
-
-  const sideEl = document.createElement('div');
-  sideEl.className = 'featured-side';
-  sideEl.innerHTML = rest
-    .map(
-      (art) => `
-    <div class="featured-item reveal">
-      <div class="artwork-wrap" data-artwork-id="${art.id}" role="button" tabindex="0" aria-label="${escapeHtml(art.title)} ansehen">
-        <img src="${art.image}" alt="${escapeHtml(art.alt)}" class="artwork-img" loading="lazy" decoding="async" />
-        <div class="artwork-hover"><span class="artwork-hover-label">Ansehen</span></div>
-      </div>
-      <div class="artwork-meta">
-        <h3>${escapeHtml(art.title)}</h3>
-        <p>${escapeHtml(art.technique)} &middot; ${escapeHtml(art.year)}</p>
-      </div>
-    </div>`
-    )
-    .join('');
-
-  grid.append(mainEl, sideEl);
-  wireArtworkTriggers(grid);
-}
 
 /* ─────────────────────────────────────────────
    PORTFOLIO GALLERY — rendered from ARTWORKS
@@ -133,7 +88,7 @@ const revealObserver = new IntersectionObserver(
       if (!entry.isIntersecting) return;
 
       const galleryParent = entry.target.closest(
-        '.gallery-masonry, .featured-grid, .about-inner, .featured-side'
+        '.gallery-masonry, .about-inner'
       );
       if (galleryParent) {
         const allItems = [...galleryParent.querySelectorAll('.reveal, .reveal-right')];
@@ -567,7 +522,6 @@ function initContactForm() {
 /* ─────────────────────────────────────────────
    INIT
 ───────────────────────────────────────────── */
-renderFeatured();
 renderGallery();
 tcInit();
 initContactForm();
