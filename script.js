@@ -129,9 +129,25 @@ const detailSymbolism = document.getElementById('detailSymbolism');
 const detailGospel = document.getElementById('detailGospel');
 const detailInterpretation = document.getElementById('detailInterpretation');
 const detailContactLink = document.getElementById('detailContactLink');
+const detailFullview = document.getElementById('detailFullview');
+const imageLightbox = document.getElementById('imageLightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
 
 let lastFocusedTrigger = null;
 let currentArtworkId = null;
+
+function openImageLightbox() {
+  if (!imageLightbox || !detailImg.src) return;
+  lightboxImg.src = detailImg.src;
+  lightboxImg.alt = detailImg.alt;
+  imageLightbox.classList.add('open');
+}
+
+function closeImageLightbox() {
+  if (!imageLightbox) return;
+  imageLightbox.classList.remove('open');
+}
 
 function splitVerse(bibleVerse) {
   const parts = (bibleVerse || '').split(' — ');
@@ -142,6 +158,8 @@ function splitVerse(bibleVerse) {
 function openArtworkDetail(id, trigger) {
   const art = ARTWORKS.find((a) => a.id === id);
   if (!art || !artworkDetail) return;
+
+  closeImageLightbox();
 
   lastFocusedTrigger = trigger || null;
   currentArtworkId = id;
@@ -220,6 +238,14 @@ if (detailClose) detailClose.addEventListener('click', closeArtworkDetail);
 if (detailPrev) detailPrev.addEventListener('click', () => navigateArtworkDetail(-1));
 if (detailNext) detailNext.addEventListener('click', () => navigateArtworkDetail(1));
 
+if (detailFullview) detailFullview.addEventListener('click', openImageLightbox);
+if (lightboxClose) lightboxClose.addEventListener('click', closeImageLightbox);
+if (imageLightbox) {
+  imageLightbox.addEventListener('click', (e) => {
+    if (e.target === imageLightbox) closeImageLightbox();
+  });
+}
+
 if (detailScroll && detailHero && !prefersReducedMotion) {
   detailScroll.addEventListener(
     'scroll',
@@ -233,6 +259,10 @@ if (detailScroll && detailHero && !prefersReducedMotion) {
 }
 
 document.addEventListener('keydown', (e) => {
+  if (imageLightbox && imageLightbox.classList.contains('open')) {
+    if (e.key === 'Escape') closeImageLightbox();
+    return;
+  }
   if (!artworkDetail || !artworkDetail.classList.contains('open')) return;
   if (e.key === 'Escape') closeArtworkDetail();
   if (e.key === 'ArrowRight') navigateArtworkDetail(1);
