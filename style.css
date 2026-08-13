@@ -1246,7 +1246,7 @@ a {
 
   .gallery-masonry {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
+    gap: 1.25rem;
   }
 
   .gallery-overlay {
@@ -1317,7 +1317,7 @@ a {
   }
 
   .gallery-masonry {
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .detail-hero {
