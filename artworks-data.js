@@ -599,6 +599,29 @@ const ARTWORKS = [
     availability: "Auf Anfrage",
     featured: false,
   },
+  {
+    id: "demut",
+    title: "Demut",
+    image: "Images/IMG_5273.jpg",
+    alt: "Gemälde eines jungen Eselsfüllens von vorne mit großen aufgestellten Ohren, dunklem zottigem Fell und wachem Blick vor warmem braun-mauve Hintergrund",
+    year: "2026",
+    category: "tiere",
+    categoryLabel: "Tiere & Natur",
+    technique: PLACEHOLDER.technique,
+    dimensions: PLACEHOLDER.dimensions,
+    background:
+      "Ein Eselsfüllen, das direkt in den Betrachter blickt, mit Ohren, die fast größer wirken als der ganze Kopf. Es gibt kaum ein unscheinbareres Tier in der Bibel als den Esel — und genau das war der Reiz: ein Wesen zu malen, das niemand für königlich hält, und darin die stille Größe zu entdecken, die es tatsächlich trägt.",
+    symbolism:
+      "Die überdimensionalen Ohren und der weiche, wache Blick des jungen Tieres erzählen von Verletzlichkeit ohne Angst. Das zottige, ungeordnete Fell und die warmen, erdigen Farbtöne holen dieses unscheinbare Tier aus jeder Randnotiz heraus und stellen es mitten ins Licht.",
+    christianMeaning:
+      "Kein Pferd, kein Löwe — ein Esel war es, auf dem Jesus in Jerusalem einzog, als Erfüllung einer jahrhundertealten Prophezeiung. Ein König, der sich nicht auf einem Streitross, sondern auf einem jungen Lasttier zeigt, kehrt jede menschliche Vorstellung von Macht um. Genau darin liegt das Evangelium: Gottes Größe zeigt sich nicht im Prunk, sondern in der Demut.",
+    bibleVerse:
+      "„Siehe, dein König kommt zu dir sanftmütig und reitet auf einem Esel, auf einem Füllen der Lastesel.“ — Matthäus 21,5",
+    interpretation:
+      "Ein Esel wird nie mit Macht in Verbindung gebracht — und genau deshalb wählte Christus ihn. Dieses Bild fragt leise, ob wir Größe dort erkennen würden, wo sie sich wirklich zeigt: nicht im Lauten, sondern im Demütigen.",
+    availability: "Auf Anfrage",
+    featured: false,
+  },
 
   // ── PORTRÄT & STILLE MOMENTE ─────────────────────────────────────
   {
