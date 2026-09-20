@@ -622,6 +622,29 @@ const ARTWORKS = [
     availability: "Auf Anfrage",
     featured: false,
   },
+  {
+    id: "verwandelt",
+    title: "Verwandelt",
+    image: "Images/IMG_5623.jpg",
+    alt: "Gemälde einer stillen Seelandschaft mit goldener Mondscheibe über dunklen Nadelbäumen und einem einzelnen Baum mit goldenem Blattwerk, gespiegelt im ruhigen Wasser",
+    year: "2026",
+    category: "tiere",
+    categoryLabel: "Tiere & Natur",
+    technique: PLACEHOLDER.technique,
+    dimensions: PLACEHOLDER.dimensions,
+    background:
+      "Zwischen lauter dunklen, unauffälligen Nadelbäumen steht ein einziger Baum, dessen Blätter golden aufleuchten — als hätte ihn ein Licht berührt, das die anderen nicht erreicht hat. Darüber eine große, goldene Mondscheibe, die sich reglos im Wasser spiegelt. Dieses Bild wollte keine ganze Landschaft verklären, sondern zeigen, wie viel sich verändert, wenn nur ein einziges Leben wirklich vom Licht erfasst wird.",
+    symbolism:
+      "Der Wald bleibt in gedeckten Grau- und Brauntönen, während ein einzelner Baum in leuchtendem Blattgold aus der Reihe tritt. Die stille Wasserfläche verdoppelt dieses Licht, statt es zu schlucken — nichts hier wehrt sich gegen die Verwandlung.",
+    christianMeaning:
+      "Wer Christus begegnet, bleibt nicht derselbe wie die Menschen um ihn herum — nicht durch eigene Anstrengung heller, sondern weil ein Licht von außen ihn erreicht hat, das andere noch nicht angenommen haben. Diese Verwandlung geschieht leise, aber sie ist unübersehbar.",
+    bibleVerse:
+      "„Wir aber alle … werden verwandelt in dasselbe Bild von einer Klarheit zu der andern.“ — 2. Korinther 3,18",
+    interpretation:
+      "Nicht der ganze Wald muss golden werden, damit sich etwas verändert — ein einziger Baum genügt, um zu zeigen, dass Licht wirklich ankommt. Vielleicht ist das auch die leiseste Beschreibung von Glauben: nicht lauter als alles andere, aber sichtbar verwandelt.",
+    availability: "Auf Anfrage",
+    featured: false,
+  },
 
   // ── PORTRÄT & STILLE MOMENTE ─────────────────────────────────────
   {
@@ -841,6 +864,29 @@ const ARTWORKS = [
     bibleVerse: "„Du bist ganz schön, meine Freundin, und kein Makel ist an dir.“ — Hohelied 4,7",
     interpretation:
       "Kaum jemand hält sich selbst für makellos. Dieses Bild erinnert daran, dass genau das die Zusage ist, die niemand sich selbst geben kann — sie muss geschenkt werden.",
+    availability: "Auf Anfrage",
+    featured: false,
+  },
+  {
+    id: "entfaltung",
+    title: "Entfaltung",
+    image: "Images/IMG_5624.jpg",
+    alt: "Gemälde eines blühenden Zweigs mit drei rosafarbenen Blüten in unterschiedlichen Öffnungsstadien und mehreren Knospen vor einem Hintergrund mit Blattgold-Streifen",
+    year: "2026",
+    category: "portrait",
+    categoryLabel: "Porträt & Stille Momente",
+    technique: PLACEHOLDER.technique,
+    dimensions: PLACEHOLDER.dimensions,
+    background:
+      "An einem einzigen Zweig hängen drei Blüten, und keine zwei von ihnen sind gleich weit geöffnet — die eine noch fest verschlossen, die andere halb, die dritte vollständig entfaltet. Nichts an diesem Ast wurde gezwungen, gleichzeitig zu blühen. Genau das war der Ausgangspunkt: verschiedene Stadien desselben Wachstums nebeneinander zu zeigen, ohne eines davon als unfertig zu werten.",
+    symbolism:
+      "Die Blüten in unterschiedlichen Öffnungsgraden, von der geschlossenen Knospe bis zur vollen Blüte, erzählen von einem Wachstum, das nicht auf einmal geschieht. Die goldenen Streifen im Hintergrund tragen jedes Stadium gleichermaßen, ohne eines davon hervorzuheben.",
+    christianMeaning:
+      "Geistliches Wachstum verläuft selten bei allen Menschen gleich schnell oder gleichzeitig — und muss es auch nicht. So wie aus derselben Pflanze zuerst der Halm, dann die Ähre und schließlich das volle Korn wächst, reift auch der Glaube in eigenem Tempo, ohne dass eine frühere Stufe weniger wert wäre als die spätere.",
+    bibleVerse:
+      "„Denn die Erde bringt von selbst Frucht, zuerst den Halm, danach die Ähre, danach den vollen Weizen in der Ähre.“ — Markus 4,28",
+    interpretation:
+      "Eine Knospe ist kein gescheiterter Versuch, eine Blüte zu sein — sie ist genau da, wo sie in diesem Moment sein soll. Dieses Bild lädt dazu ein, den eigenen, noch unfertigen Glauben mit derselben Geduld zu betrachten.",
     availability: "Auf Anfrage",
     featured: false,
   },
